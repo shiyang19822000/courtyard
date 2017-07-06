@@ -1,0 +1,15 @@
+- hosts: ali
+  user: root
+  tasks:
+      - name: debug
+        debug:
+          msg: "inventory_hostname {{ inventory_hostname }}"
+      
+      - name: copy courtyard
+        copy:
+          src: ~/PycharmProjects/courtyard
+          dest: /root/projects/
+          owner: root
+          group: root
+          # mode: 0777
+
