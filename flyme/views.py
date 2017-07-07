@@ -14,6 +14,17 @@ class RecallSerializer(serializers.ModelSerializer):
         model = Recall
         fields = '__all__'
 
+    def create(self, validate_data):
+        return Recall.objects.create(**validate_data)
+
+    def update(self, instance, validate_data):
+        instance.title = validate_data.get('title', instance.title)
+        instance.desc = validate_data.get('desc', instance.desc)
+        instance.thumb = validate_data.get('thumb', instance.thumb)
+        instance.full = validate_data.get('full', instance.full)
+        instance.save()
+        return instance
+
 
 class RecallPagination(LimitOffsetPagination):
     page_size = 1
