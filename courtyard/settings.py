@@ -84,16 +84,6 @@ WSGI_APPLICATION = 'courtyard.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'courtyard',
-#         'USER': 'postgres',
-#         'PASSWORD': '',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
 
 DATABASES = {
     'default': {
@@ -101,7 +91,7 @@ DATABASES = {
         'NAME': 'courtyard',
         'USER': 'postgres',
         'PASSWORD': '1qaz2wsx',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '32768',
     }
 }
