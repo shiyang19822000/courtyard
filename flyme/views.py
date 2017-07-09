@@ -81,9 +81,9 @@ class WordsWallViewSet(viewsets.ModelViewSet):
     queryset = WordsWall.objects.filter()
     serializer_class = WordsWallSerializer
     pagination_class = WordsWallPagination
-    filter_class = WordsWallFilter
-    # filter_backends = (filters.DjangoFilterBackend, )
-    # filter_fields = ('recall_id', )
+    # filter_class = WordsWallFilter
+    filter_backends = (filters.DjangoFilterBackend, )
+    filter_fields = ('recall_id', )
 
     def list(self, request):
         """查询留言
