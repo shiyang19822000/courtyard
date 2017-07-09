@@ -21,7 +21,20 @@ class Recall(models.Model):
         ordering = ['-updated']
 
 
+class WordsWall(models.Model):
+    recall = models.ForeignKey(Recall, related_name='words')
+    words = models.TextField(u'留言', max_length=100)
+    created = models.DateTimeField(u'创建时间', auto_now_add=True)
+
+    def __unicode__(self):
+        return self.words
+
+    class Meta:
+        ordering = ['-created']
+
+
 class Profile(models.Model):
+
     title = models.CharField(u'标题', max_length=500)
     body = models.TextField(u'正文', max_length=2000)
     body1 = models.TextField(u'正文1', max_length=1000)

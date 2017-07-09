@@ -41,6 +41,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'recalls', flyme_views.RecallViewSet)
 router.register(r'profiles', flyme_views.ProfileViewSet)
+router.register(r'wordswall', flyme_views.WordsWallViewSet)
 
 
 schema_view = get_swagger_view(title='courtyard API')
