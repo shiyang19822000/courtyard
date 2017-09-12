@@ -6,7 +6,7 @@ from flyme.models import Recall, Profile, WordsWall
 # Register your models here.
 @admin.register(Recall)
 class RecallAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'desc', 'thumb', 'full', 'updated', 'created']
+    list_display = ['id', 'title', 'desc', 'thumb', 'full', 'category', 'updated', 'created']
     list_filter = ['updated']
     date_hierarchy = 'updated'
     search_fields = ['=title', '=desc']

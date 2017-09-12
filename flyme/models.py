@@ -5,10 +5,17 @@ from django.db import models
 
 # Create your models here.
 class Recall(models.Model):
+    RECALL_CATEGORY_IMAGE = 0
+    RECALL_CATEGORY_VIDEO = 1
+    RECALL_CATEGORY = (
+        (RECALL_CATEGORY_IMAGE, u'照片'),
+        (RECALL_CATEGORY_VIDEO, u'视频'),
+    )
     title = models.CharField(u'标题', max_length=50)
     desc = models.CharField(u'描述', max_length=200)
     thumb = models.URLField(u'缩略图')
     full = models.URLField(u'原始图')
+    category = models.SmallIntegerField(u'分类', choices=RECALL_CATEGORY, default=RECALL_CATEGORY_IMAGE)
     updated = models.DateTimeField(u'更新时间', auto_now=True)
     created = models.DateTimeField(u'创建时间', auto_now_add=True)
 
