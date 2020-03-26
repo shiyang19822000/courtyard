@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # 'grappelli',
     'suit',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -91,8 +92,8 @@ DATABASES = {
         'NAME': 'courtyard',
         'USER': 'postgres',
         'PASSWORD': '1qaz2wsx',
-        'HOST': 'localhost',
-        'PORT': '32768',
+        'HOST': '114.215.29.0',
+        'PORT': '5432',
     }
 }
 

@@ -47,6 +47,8 @@ class RecallViewSet(viewsets.ModelViewSet):
 
 class WordsWallSerializer(serializers.ModelSerializer):
 
+    recall = RecallSerializer()
+
     def create(self, validate_date):
         return WordsWall.objects.create(**validate_date)
 
@@ -56,7 +58,7 @@ class WordsWallSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = WordsWall
-        fields = '__all__'
+        fields = ('words', 'created', 'recall', 'id',)
         ordering = ['-created']
 
 
@@ -74,7 +76,7 @@ class WordsWallFilter(filters.FilterSet):
 
     class Meta:
         model = WordsWall
-        fields = ('recall_id', )
+        fields = ('recall_id',)
 
 
 class WordsWallViewSet(viewsets.ModelViewSet):
@@ -82,8 +84,8 @@ class WordsWallViewSet(viewsets.ModelViewSet):
     serializer_class = WordsWallSerializer
     pagination_class = WordsWallPagination
     # filter_class = WordsWallFilter
-    filter_backends = (filters.DjangoFilterBackend, )
-    filter_fields = ('recall_id', )
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('recall_id',)
 
     def list(self, request):
         """查询留言

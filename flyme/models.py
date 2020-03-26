@@ -34,7 +34,6 @@ class WordsWall(models.Model):
 
 
 class Profile(models.Model):
-
     title = models.CharField(u'标题', max_length=500)
     body = models.TextField(u'正文', max_length=2000)
     body1 = models.TextField(u'正文1', max_length=1000)
